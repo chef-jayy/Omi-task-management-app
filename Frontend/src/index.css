@@ -1,0 +1,183 @@
+/* frontend/src/index.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+
+:root {
+  --primary-color: #6a0dad; /* Purple */
+  --primary-light: #9c27b0;
+  --secondary-color: #ffd700; /* Gold */
+  --accent-color: #ff4500; /* OrangeRed */
+  --text-color: #333;
+  --text-color-light: #fff;
+  --bg-light: #f4f7f6;
+  --bg-dark: #2c3e50; /* Dark blue-gray */
+  --border-color: #ddd;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--text-color-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box; /* Ensures padding doesn't add to total width */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(106, 13, 173, 0.2);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.message-box {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--bg-dark);
+  color: var(--text-color-light);
+  padding: 15px 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeInDown 0.5s forwards, fadeOutUp 0.5s 2.5s forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+}
+
+.flex-group {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  input,
+  textarea,
+  select {
+    padding: 10px;
+    font-size: 14px;
+  }
+  .flex-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+}
