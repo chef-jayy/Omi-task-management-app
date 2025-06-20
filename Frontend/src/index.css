@@ -2,14 +2,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
 
 :root {
-  --primary-color: #6a0dad; /* Purple */
+  --primary-color: #6a0dad;
   --primary-light: #9c27b0;
-  --secondary-color: #ffd700; /* Gold */
-  --accent-color: #ff4500; /* OrangeRed */
+  --secondary-color: #ffd700;
+  --accent-color: #ff4500;
   --text-color: #333;
   --text-color-light: #fff;
   --bg-light: #f4f7f6;
-  --bg-dark: #2c3e50; /* Dark blue-gray */
+  --bg-dark: #2c3e50;
   --border-color: #ddd;
 }
 
@@ -94,7 +94,7 @@ select {
   border-radius: 5px;
   font-family: "Inter", sans-serif;
   font-size: 16px;
-  box-sizing: border-box; /* Ensures padding doesn't add to total width */
+  box-sizing: border-box;
 }
 
 input:focus,
@@ -179,5 +179,97 @@ select:focus {
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
+  }
+}
+
+auth-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  text-align: center;
+}
+
+.auth-container h2 {
+  margin-bottom: 25px;
+  color: var(--primary-color);
+}
+
+.auth-switch {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.auth-switch .link-button {
+  background: none;
+  color: var(--primary-color);
+  padding: 0 5px;
+  text-decoration: underline;
+  font-size: 14px;
+  transition: color 0.2s ease;
+  text-transform: none;
+  font-weight: normal;
+}
+
+.auth-switch .link-button:hover {
+  color: var(--primary-light);
+  transform: none;
+}
+
+.app-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1; /* Allows it to expand and fill available space */
+}
+
+.app-header {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+}
+
+.app-header h1 {
+  color: var(--text-color-light);
+  margin: 0;
+  font-size: 28px;
+}
+
+.app-header button {
+  background-color: var(--accent-color);
+}
+
+.app-header button:hover {
+  background-color: #e04100;
+}
+
+.loading-spinner {
+  font-size: 20px;
+  color: var(--primary-color);
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+  .app-header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .app-header button {
+    width: 100%;
+    margin-top: 10px;
   }
 }

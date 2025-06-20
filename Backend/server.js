@@ -11,16 +11,16 @@ connectDB();
 
 const app = express();
 
-app.use(express.json());
-app.use(cors());
+// Middleware
+app.use(express.json()); // Body parser for JSON data
+app.use(cors()); // Enable CORS for all routes
 
+// Basic Route for testing
 app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
-// Define routes (will be added in subsequent phases)
-// app.use('/api/auth', require('./routes/auth'));
-// app.use('/api/tasks', require('./routes/tasks'));
+app.use("/api/auth", require("./routes/auth"));
 
 const PORT = process.env.PORT || 5000;
 
